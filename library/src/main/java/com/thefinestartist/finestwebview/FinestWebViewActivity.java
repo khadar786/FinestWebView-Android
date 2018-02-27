@@ -221,6 +221,8 @@ public class FinestWebViewActivity extends AppCompatActivity
   protected LinearLayout menuOpenWith;
   protected TextView menuOpenWithTv;
   protected FrameLayout webLayout;
+  private ValueCallback<Uri> mUploadMessage;  
+  private final static int FILECHOOSER_RESULTCODE=1; 
   DownloadListener downloadListener = new DownloadListener() {
     @Override public void onDownloadStart(String url, String userAgent, String contentDisposition,
         String mimetype, long contentLength) {
@@ -1128,7 +1130,7 @@ public class FinestWebViewActivity extends AppCompatActivity
   }
 
   public class MyWebChromeClient extends WebChromeClient {
-
+    //test
     @Override public void onProgressChanged(WebView view, int progress) {
       BroadCastManager.onProgressChanged(FinestWebViewActivity.this, key, progress);
 
